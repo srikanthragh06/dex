@@ -1,7 +1,9 @@
+// importing external objects
 const mongoose = require("mongoose");
 
-async function connectMongoDB(url) {
-    console.log(`MongoDB connection initiating`);
+// connection function
+function connectMongoDB(url) {
+    console.log(`MongoDB connection initiating...`);
     return mongoose
         .connect(url)
         .then(() => {
@@ -13,4 +15,5 @@ async function connectMongoDB(url) {
         });
 }
 
+//exporting
 module.exports = { connectMongoDB };
