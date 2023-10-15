@@ -1,14 +1,18 @@
 // importing external libraries
 const express = require("express");
-const mongoose = require("mongoose");
+const path = require("path");
+const cookieParser = require("cookie-parser");
+require("dotenv").config();
 
 // importing internal objects
 const { connectMongoDB } = require("./connection");
 const userRouter = require("./routes/user");
+const dexRouter = require("./routes/dex");
+const { checkReqJWTToken } = require("./middlewares/auth");
 
 // declaring constants
-const MONGODBURL = "mongodb://127.0.0.1:27017/dex";
-const PORT = 3000;
+const MONGODBURL = process.env.DB_URL;
+const PORT = process.env.PORT;
 
 // creating app object
 const app = express();
@@ -16,13 +20,18 @@ const app = express();
 //connect to mongoDB
 connectMongoDB(MONGODBURL);
 
-// external middlewares
-app.use(express.json());
+//Setting up view engine
+app.set("view engine", "ejs");
+app.set("views", path.resolve("./views"));
 
-//custom middlewares
+// middlewares
+app.use(cookieParser());
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
 //routing
 app.use("/user", userRouter);
+app.use("/dex", checkReqJWTToken, dexRouter);
 
 // server listening
 app.listen(PORT, () => {

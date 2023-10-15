@@ -6,6 +6,7 @@ const {
     handleSignup,
     handleLogin,
     handleGetAllUsers,
+    handleLogout,
 } = require("../controllers/user");
 
 // creating router
@@ -15,6 +16,12 @@ const userRouter = Router();
 userRouter.route("/signup").post(handleSignup);
 
 userRouter.route("/login").post(handleLogin);
+
+userRouter.route("/auth").get((req, res) => {
+    res.render("auth", { loginMessage: null, signupMessage: null });
+});
+
+userRouter.route("/logout").post(handleLogout);
 
 userRouter.route("/").get(handleGetAllUsers);
 
