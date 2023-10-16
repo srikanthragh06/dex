@@ -18,7 +18,7 @@ userRouter.route("/signup").post(handleSignup);
 userRouter.route("/login").post(handleLogin);
 
 userRouter.route("/auth").get((req, res) => {
-    res.render("auth", { loginMessage: null, signupMessage: null });
+    res.render("pages/auth", { loginMessage: null, signupMessage: null });
 });
 
 userRouter.route("/logout").post(handleLogout);

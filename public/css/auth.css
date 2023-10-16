@@ -1,0 +1,122 @@
+body {
+    background-color: black;
+    color: #d5d5d5;
+    margin: 0px;
+    font-family: "Young Serif", serif;
+    line-height: 1;
+}
+.msg {
+    color: #d5d5d5;
+    font-size: 18px;
+    margin: 0px;
+}
+input {
+    border: none; /* Remove border */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    outline: none; /* Remove outline (focus border) */
+    background: none; /* Remove background */
+    font-size: 16px; /* Set font size */
+    /* Add other styles as needed */
+}
+.input {
+    background-color: black;
+    /* border: ; */
+    color: #d5d5d5;
+    font-family: "Young Serif", serif;
+    font-size: 24px;
+}
+.input:active {
+    border: none;
+}
+.button {
+    display: none;
+}
+.navbar {
+    position: relative;
+    top: 20%;
+    right: 0px;
+    left: 0px;
+    bottom: 85%;
+
+    margin-top: 0.5%;
+    padding: 0.5%;
+
+    display: flex;
+    justify-content: space-around;
+
+    /* background-color: #d5d5d5;
+    color: black; */
+
+    border: 0.5px solid #d5d5d5;
+    border-left: none;
+    border-right: none;
+}
+.navbar__title {
+    font-size: 84px;
+
+    width: 20%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    /* border: 0.5px solid blue; */
+}
+.navbar__title__dex {
+    text-align: center;
+    margin: 0px;
+    /* border: 0.5px solid yellow; */
+}
+.navbar__title__name {
+    /* border: 0.5px solid yellow; */
+    font-size: 20px;
+    text-align: right;
+    font-weight: 300;
+    font-family: "Comic Sans MS", cursive;
+}
+.container {
+    /* border: 0.5px solid blue; */
+    margin-top: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* height: 60vh; */
+}
+.container__message {
+    line-height: 1.3;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+    /* border: 0.5px solid red; */
+}
+.container__form {
+    line-height: 1.3;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border: 0.5px solid #d5d5d5;
+    border-left: none;
+    border-right: none;
+    margin-top: 40px;
+}
+
+.container__form__login,
+.container__form__signup {
+    color: #d5d5d5;
+    /* border: 0.5px solid yellow; */
+    line-height: 3;
+    font-size: 24px;
+    text-align: left;
+}
+
+.container__form__login h1,
+.container__form__signup h1 {
+    font-size: 48px;
+    font-weight: 500;
+    margin: 0px;
+    /* line-height: 2; */
+}

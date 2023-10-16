@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>DEX</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Young+Serif&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="/css/auth.css" />
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="navbar__title">
+                <div class="navbar__title__dex">DEX</div>
+                <div class="navbar__title__name">by Srikanth Raghavan</div>
+            </div>
+        </nav>
+        <!-- login form -->
+        <div class="container">
+            <div class="container__message">
+                Srikanth here! Welcome and thank you for using Dex, your note
+                making web app.<br />To use Dex's features please log in to your
+                account or sign up for an account if you haven't already.
+            </div>
+            <div class="container__form">
+                <div class="container__form__login">
+                    <h1>Login</h1>
+
+                    <form action="/user/login" method="post">
+                        <div>
+                            <label for="username">Username:</label>
+                            <input
+                                class="input"
+                                type="text"
+                                id="username"
+                                name="username"
+                                required
+                            />
+                        </div>
+                        <div>
+                            <label for="password">Password:</label>
+                            <input
+                                class="input"
+                                type="password"
+                                id="password"
+                                name="password"
+                                required
+                            />
+                        </div>
+                        <div>
+                            <button type="submit" class="button">Log In</button>
+                        </div>
+                    </form>
+                    <% if (loginMessage){%>
+                    <p class="msg"><%= loginMessage %></p>
+                    <% } %>
+                </div>
+                <div class="container__form__signup">
+                    <h1>Sign Up</h1>
+                    <form action="/user/signup" method="post">
+                        <div>
+                            <label for="username">Username:</label>
+                            <input
+                                class="input"
+                                type="text"
+                                id="username"
+                                name="username"
+                                required
+                            />
+                        </div>
+                        <div>
+                            <label for="password">Password:</label>
+                            <input
+                                class="input"
+                                type="password"
+                                id="password"
+                                name="password"
+                                required
+                            />
+                        </div>
+                        <div>
+                            <label for="confirm-password"
+                                >Confirm password:</label
+                            >
+                            <input
+                                class="input"
+                                type="password"
+                                id="confirm-password"
+                                name="confirmPassword"
+                                required
+                            />
+                        </div>
+                        <div>
+                            <button type="submit" class="button">
+                                Sign up
+                            </button>
+                        </div>
+                    </form>
+                    <% if (signupMessage){%>
+                    <p class="msg"><%= signupMessage %></p>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+        <!-- <script src="/js/removeBorders.js"></script> -->
+    </body>
+</html>

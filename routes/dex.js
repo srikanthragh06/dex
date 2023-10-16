@@ -8,7 +8,7 @@ const dexRouter = Router();
 
 // setting up routes
 dexRouter.route("/").get((req, res) => {
-    res.render("home");
+    res.render("pages/home");
 });
 
 // exporting

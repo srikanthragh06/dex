@@ -2,6 +2,7 @@
 const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
+const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
 // importing internal objects
@@ -28,10 +29,27 @@ app.set("views", path.resolve("./views"));
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, "public")));
 
 //routing
 app.use("/user", userRouter);
 app.use("/dex", checkReqJWTToken, dexRouter);
+app.route("/").get((req, res) => {
+    res.status(301).redirect("/dex");
+});
+// app.get("/profile", (req, res) => {
+//     const reqJWTToken = req.cookies.jwtToken;
+//     if (!reqJWTToken) {
+//         return res.json({ message: "user not logged in" });
+//     }
+//     jwt.verify(reqJWTToken, process.env.JWT_SECRET_KEY, (err, decoded) => {
+//         if (err) {
+//             return res.status(401).redirect("/user/auth");
+//         }
+//         console.log(decoded);
+//         return res.json({ user: decoded });
+//     });
+// });
 
 // server listening
 app.listen(PORT, () => {
