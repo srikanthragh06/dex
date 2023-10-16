@@ -3,18 +3,21 @@ const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
 // functions
-function isUserLoggedIn(req) {
-    const reqJWTToken = req.cookies.jwtToken;
-    if (!reqJWTToken) {
-        return false;
-    }
-    jwt.verify(reqJWTToken, process.env.JWT_SECRET_KEY, (err, decoded) => {
-        if (err) {
-            console.log(err);
-            return false;
+async function findUsernameLoggedIn(req) {
+    try {
+        const reqJWTToken = req.cookies.jwtToken;
+        if (!reqJWTToken) {
+            return null;
         }
-        return true;
-    });
+        const decoded = await jwt.verify(
+            reqJWTToken,
+            process.env.JWT_SECRET_KEY
+        );
+        return decoded.username;
+    } catch (err) {
+        console.log(err);
+        return null;
+    }
 }
 
-module.exports = { isUserLoggedIn };
+module.exports = { findUsernameLoggedIn };

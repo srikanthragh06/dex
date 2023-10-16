@@ -9,6 +9,7 @@ require("dotenv").config();
 const { connectMongoDB } = require("./connection");
 const userRouter = require("./routes/user");
 const dexRouter = require("./routes/dex");
+const noteRouter = require("./routes/note");
 const { checkReqJWTToken } = require("./middlewares/auth");
 
 // declaring constants
@@ -34,22 +35,10 @@ app.use(express.static(path.join(__dirname, "public")));
 //routing
 app.use("/user", userRouter);
 app.use("/dex", checkReqJWTToken, dexRouter);
+app.use("/note", checkReqJWTToken, noteRouter);
 app.route("/").get((req, res) => {
     res.status(301).redirect("/dex");
 });
-// app.get("/profile", (req, res) => {
-//     const reqJWTToken = req.cookies.jwtToken;
-//     if (!reqJWTToken) {
-//         return res.json({ message: "user not logged in" });
-//     }
-//     jwt.verify(reqJWTToken, process.env.JWT_SECRET_KEY, (err, decoded) => {
-//         if (err) {
-//             return res.status(401).redirect("/user/auth");
-//         }
-//         console.log(decoded);
-//         return res.json({ user: decoded });
-//     });
-// });
 
 // server listening
 app.listen(PORT, () => {
