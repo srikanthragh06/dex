@@ -1,7 +1,10 @@
 // importing internal objects
 const Note = require("../models/note");
 const User = require("../models/user");
-const { findUsernameLoggedIn } = require("../utils/utils");
+const {
+    findUsernameLoggedIn,
+    findUserIdFromUserName,
+} = require("../utils/utils");
 
 // handler functions
 async function handleGetAllNotes(req, res) {
@@ -23,11 +26,8 @@ async function handleAddNote(req, res) {
                 .json({ message: "title or note cannot be empty" });
         }
 
-        const loggedInUserId = (
-            await User.findOne({
-                username: await findUsernameLoggedIn(req),
-            })
-        )._id;
+        const loggedInUsername = await findUsernameLoggedIn(req);
+        const loggedInUserId = await findUserIdFromUserName(loggedInUsername);
 
         const noteData = {
             title: req.body.title,

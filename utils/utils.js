@@ -2,6 +2,9 @@
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
+//importin internal objects
+const User = require("../models/user");
+
 // functions
 async function findUsernameLoggedIn(req) {
     try {
@@ -20,4 +23,18 @@ async function findUsernameLoggedIn(req) {
     }
 }
 
-module.exports = { findUsernameLoggedIn };
+async function findUserIdFromUserName(username) {
+    try {
+        const loggedInUserId = (
+            await User.findOne({
+                username: username,
+            })
+        )._id;
+        return loggedInUserId;
+    } catch (err) {
+        console.log(err);
+        return null;
+    }
+}
+
+module.exports = { findUsernameLoggedIn, findUserIdFromUserName };

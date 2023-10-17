@@ -1,0 +1,35 @@
+[33mcommit 29cf92051bff76494625bdaaffa0efed9445a2bc[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: sr1k5 <srikanthragh06@gmail.com>
+Date:   Tue Oct 17 01:15:36 2023 +0530
+
+    notes schema, add,get,delete notes requests complete
+
+[33mcommit 139af2bed12f33781cc6479413ebfa6d5c3ca2ac[m
+Author: sr1k5 <srikanthragh06@gmail.com>
+Date:   Mon Oct 16 18:46:55 2023 +0530
+
+    auth page design, home page design, logout feature
+
+[33mcommit c6b31a26c333e9738b16bc8ea6b74c41bd547fd6[m
+Author: sr1k5 <srikanthragh06@gmail.com>
+Date:   Sun Oct 15 18:17:51 2023 +0530
+
+    minimalistic signup and login page, authentication
+
+[33mcommit 00c084cc9a42613ff7b87d6c38b18651ca3ef2d6[m
+Author: sr1k5 <srikanthragh06@gmail.com>
+Date:   Sun Oct 15 02:45:24 2023 +0530
+
+    userSchema, signup and login features
+
+[33mcommit 69bfcdaa4b8b424bfa63422185da4e7cbc3e0554[m
+Author: sr1k5 <srikanthragh06@gmail.com>
+Date:   Sun Oct 15 00:00:45 2023 +0530
+
+    mongodb connection and some basic folder structure
+
+[33mcommit 2c0d63cbd5c0ac12cbbba2e7fc02c147312d0b2f[m
+Author: sr1k5 <srikanthragh06@gmail.com>
+Date:   Sat Oct 14 23:01:49 2023 +0530
+
+    first commit

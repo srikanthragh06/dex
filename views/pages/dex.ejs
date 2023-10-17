@@ -10,7 +10,7 @@
             href="https://fonts.googleapis.com/css2?family=Young+Serif&display=swap"
             rel="stylesheet"
         />
-        <link rel="stylesheet" href="/css/home.css" />
+        <link rel="stylesheet" href="/css/dex.css" />
     </head>
     <body>
         <form action="/user/auth" method="get" id="signup-form"></form>
@@ -29,6 +29,22 @@
                 <p>Logout</p>
             </div>
         </nav>
+        <div class="body">
+            <div class="body__note-container">
+                <div class="body__note-container__title">
+                    <p class="whos-notes"><%= loggedInUsername %>'s notes</p>
+                </div>
+                <div class="body__note-container__body">
+                    <% notes.forEach(note => { %>
+                    <div class="note">
+                        <p class="note__title"><%= note.title %></p>
+                        <p class="note__note"><%= note.note %></p>
+                    </div>
+                    <%}); %>
+                </div>
+            </div>
+            <!-- <div class="body__note-editor"></div> -->
+        </div>
 
         <!-- <script src="/js/removeBorders.js"></script> -->
         <script src="/js/formSubmit.js"></script>
