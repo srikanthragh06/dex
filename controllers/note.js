@@ -48,7 +48,27 @@ async function handleAddNote(req, res) {
 
 async function handleUpdateNote(req, res) {
     try {
-        return res.json({});
+        if (!req.body._id) {
+            return res.status(400).json({ message: "id is empty" });
+        }
+        if (!req.body.title || !req.body.note) {
+            return res
+                .status(400)
+                .json({ message: "title or note cannot be empty" });
+        }
+
+        const updatedNote = await Note.findOneAndUpdate(
+            { _id: req.body._id },
+            { title: req.body.title, note: req.body.note },
+            { new: true }
+        );
+        if (!updatedNote) {
+            return res.status(400).json({ message: "id not found" });
+        }
+
+        return res
+            .status(200)
+            .json({ message: "successful", updatedRecord: updatedNote });
     } catch (err) {
         console.log(err);
         res.status(500).json({ message: "server problem" });
