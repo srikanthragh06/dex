@@ -7,6 +7,24 @@ const {
 } = require("../utils/utils");
 
 // handler functions
+async function handleGetNote(req, res) {
+    try {
+        if (!req.params.id) {
+            return res.status(400).json({ message: "id is missing" });
+        }
+        const note = await Note.findById(req.params.id);
+        if (!note) {
+            return res.status(400).json({ message: "Note not found" });
+        }
+        return res
+            .status(200)
+            .json({ message: "request successful", note: note });
+    } catch (err) {
+        console.log(err);
+        return res.status(500).json({ message: "server problem" });
+    }
+}
+
 async function handleGetAllNotes(req, res) {
     try {
         const notes = await Note.find({});
@@ -79,17 +97,18 @@ async function handleDeleteNote(req, res) {
     try {
         const result = await Note.deleteOne({ _id: req.body._id });
         if (result.deletedCount === 0) {
-            return res.status(400).json({ message: "note with id not found" });
+            return res.status(400).json({ message: "deletion failed" });
         }
-        return res.status(200).json({ message: "note deleted successfully" });
+        return res.status(200).json({ message: "deletion successful" });
     } catch (err) {
         console.log(err);
-        return res.status(500).json({ message: "server problem" });
+        return res.status(500).json({ message: "Serverside problem" });
     }
 }
 
 // exporting
 module.exports = {
+    handleGetNote,
     handleGetAllNotes,
     handleAddNote,
     handleUpdateNote,

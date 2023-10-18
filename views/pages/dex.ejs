@@ -33,20 +33,55 @@
             <div class="body__note-container">
                 <div class="body__note-container__title">
                     <p class="whos-notes"><%= loggedInUsername %>'s notes</p>
+                    <button class="add-note-btn">Add Note</button>
                 </div>
                 <div class="body__note-container__body">
                     <% notes.forEach(note => { %>
                     <div class="note">
-                        <p class="note__title"><%= note.title %></p>
-                        <p class="note__note"><%= note.note %></p>
+                        <div class="note__details">
+                            <p class="note__details__title">
+                                <%= note.title %>
+                            </p>
+                            <p class="note__details__note"><%= note.note %></p>
+                        </div>
+                        <div class="note__buttons">
+                            <button class="edit-note-btn">Edit</button>
+                            <button class="delete-note-btn">Delete</button>
+                        </div>
                     </div>
                     <%}); %>
                 </div>
             </div>
-            <!-- <div class="body__note-editor"></div> -->
+            <div class="body__note-editor">
+                <div class="body__note-editor__title">
+                    <p class="title-title">Title</p>
+                    <textarea
+                        class="title-input"
+                        name="notes"
+                        rows="2"
+                        required
+                    ></textarea>
+                </div>
+                <div class="body__note-editor__note">
+                    <p class="note-title">Note</p>
+                    <textarea
+                        class="note-input"
+                        name="notes"
+                        rows="12"
+                        required
+                    ></textarea>
+                </div>
+                <div class="body__note-editor__buttons">
+                    <button class="cancel-btn">Cancel</button>
+                    <button class="save-btn">Save</button>
+                </div>
+            </div>
         </div>
 
-        <!-- <script src="/js/removeBorders.js"></script> -->
+        <script>
+            var notes = <%- JSON.stringify(notes) %>;
+        </script>
         <script src="/js/formSubmit.js"></script>
+        <script src="/js/dex.js"></script>
     </body>
 </html>

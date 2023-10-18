@@ -51,6 +51,7 @@ body {
 .navbar__signup,
 .navbar__logout {
     /* border: 0.5px solid blue; */
+    font-family: "Young Serif", serif;
     text-align: center;
 
     font-size: 32px;
@@ -70,7 +71,7 @@ body {
 .body {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
 
     margin-left: 1%;
     margin-right: 1%;
@@ -82,8 +83,8 @@ body {
 }
 
 .body__note-container {
-    height: 70vh;
-    width: 48%;
+    height: 65vh;
+    width: 40%;
 
     display: flex;
     flex-direction: column;
@@ -105,6 +106,21 @@ body {
     height: 10%;
     margin-bottom: 10vh;
     /* background-color: #d5d5d5; */
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.add-note-btn {
+    font-family: "Young Serif", serif;
+    font-size: 20px;
+    color: #d5d5d5;
+    background-color: rgb(20, 20, 20);
+    border-radius: 2vw;
+    margin-top: 4.5vh;
+    cursor: pointer;
+    width: 10vw;
+    height: 5vh;
 }
 .body__note-container__body {
     /* border: 0.5px solid yellow; */
@@ -112,7 +128,6 @@ body {
     height: 90%;
     overflow-y: scroll;
     scrollbar-color: #d5d5d5 black;
-    scrollbar-base-color: black;
 }
 .body__note-container__body::-webkit-scrollbar {
     width: 0.5vw;
@@ -121,34 +136,141 @@ body {
     background-color: #d5d5d5;
 }
 .note {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
     border: 0.5px solid rgb(0, 0, 0);
     margin-bottom: 2vh;
     padding: 1vw;
     box-shadow: 0px 0px 10px rgb(135, 135, 135);
     border-radius: 2vw;
 }
-.note__title {
+/* .note__details {
+    border: 0.5px solid white;
+} */
+.note__details__title {
     margin: 0;
     /* border: 0.5px solid red; */
-    font-size: 24px;
-    height: 20px;
+    font-size: 18px;
+    /* height: 40px; */
+    overflow: hidden;
     font-weight: 700;
     margin-bottom: 3vh;
+    width: 28vw;
 }
-.note__note {
+.note__details__note {
+    width: 28vw;
     margin: 0;
     margin-top: 2%;
 
     /* border: 0.5px solid green; */
     overflow: hidden;
-    height: 100%;
+    /* height: 80%; */
     line-height: 1.2;
-    font-size: 18px;
+    font-size: 16px;
 }
-
+.note__buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    /* border: 0.5px solid white; */
+    width: 10vw;
+}
+.edit-note-btn,
+.delete-note-btn {
+    font-family: "Young Serif", serif;
+    font-size: 16px;
+    color: #d5d5d5;
+    background-color: rgb(20, 20, 20);
+    border-radius: 2vw;
+    margin-bottom: 2vh;
+    cursor: pointer;
+}
 .body__note-editor {
-    height: 75vh;
-    width: 45%;
+    height: 65vh;
+    width: 40%;
 
     border: 0.5px solid blue;
+    border: 3px solid black;
+    padding: 3vh 2vw;
+    box-shadow: 0px 0px 10px rgb(135, 135, 135);
+    border-radius: 2vw;
+
+    display: flex;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.body__note-editor__title-title {
+    border: 0.5px solid blue;
+}
+.title-title {
+    font-size: 24px;
+    margin: 0px;
+}
+.title-input {
+    width: 100%;
+    margin-top: 2vh;
+    resize: none;
+    overflow-y: scroll;
+    background-color: rgb(20, 20, 20);
+    color: white;
+    font-size: 18px;
+    border: 0.5px solid rgb(0, 0, 0);
+    box-shadow: 0px 0px 10px rgb(135, 135, 135);
+    border-radius: 0.5vw;
+}
+.body__note-editor__note {
+    /* border: 0.5px solid blue; */
+}
+
+.title-input::-webkit-scrollbar {
+    width: 0.25vw;
+}
+.title-input::-webkit-scrollbar-thumb {
+    background-color: #d5d5d5;
+}
+.note-title {
+    font-size: 24px;
+    margin: 0px;
+}
+.note-input {
+    width: 100%;
+    margin-top: 2vh;
+    resize: none;
+    overflow-y: scroll;
+    background-color: rgb(20, 20, 20);
+    color: white;
+    font-size: 18px;
+    border: 0.5px solid rgb(0, 0, 0);
+    box-shadow: 0px 0px 10px rgb(135, 135, 135);
+    border-radius: 0.5vw;
+}
+.note-input::-webkit-scrollbar {
+    width: 0.25vw;
+}
+.note-input::-webkit-scrollbar-thumb {
+    background-color: #d5d5d5;
+}
+.body__note-editor__buttons {
+    /* border: 2px solid blue; */
+
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    /* padding: 0vh 1vw; */
+}
+.cancel-btn,
+.save-btn {
+    font-family: "Young Serif", serif;
+    font-size: 24px;
+    color: #d5d5d5;
+    background-color: rgb(20, 20, 20);
+    border-radius: 2vw;
+    /* margin-bottom: 2vh; */
+    cursor: pointer;
+    margin-right: 2vw;
+    width: 10vw;
 }
