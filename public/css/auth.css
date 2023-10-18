@@ -2,7 +2,7 @@ body {
     background-color: black;
     color: #d5d5d5;
     margin: 0px;
-    font-family: "Young Serif", serif;
+    font-family: "Open Sans", sans-serif;
     line-height: 1;
 }
 .msg {
@@ -20,11 +20,13 @@ input {
     /* Add other styles as needed */
 }
 .input {
-    background-color: black;
-    /* border: ; */
+    background-color: rgb(20, 20, 20);
+    border: black;
+    border-radius: 2vw;
     color: #d5d5d5;
-    font-family: "Young Serif", serif;
-    font-size: 24px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
+    padding: 0.5vw;
 }
 .input:active {
     border: none;

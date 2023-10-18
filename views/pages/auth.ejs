@@ -6,8 +6,10 @@
         <title>DEX</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Young+Serif&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
             rel="stylesheet"
         />
         <link rel="stylesheet" href="/css/auth.css" />
@@ -51,9 +53,8 @@
                                 required
                             />
                         </div>
-                        <div>
-                            <button type="submit" class="button">Log In</button>
-                        </div>
+
+                        <button type="submit" class="button">Log In</button>
                     </form>
                     <% if (loginMessage){%>
                     <p class="msg"><%= loginMessage %></p>
@@ -94,11 +95,8 @@
                                 required
                             />
                         </div>
-                        <div>
-                            <button type="submit" class="button">
-                                Sign up
-                            </button>
-                        </div>
+
+                        <button type="subzmit" class="button">Sign up</button>
                     </form>
                     <% if (signupMessage){%>
                     <p class="msg"><%= signupMessage %></p>

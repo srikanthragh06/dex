@@ -11,7 +11,9 @@ async function handleRenderHomePage(req, res) {
     try {
         const loggedInUsername = await findUsernameLoggedIn(req);
         const loggedInUserId = await findUserIdFromUserName(loggedInUsername);
-        const notes = await Note.find({ user: loggedInUserId });
+        const notes = await Note.find({ user: loggedInUserId }).sort({
+            updatedAt: -1,
+        });
         return res.status(200).render("pages/dex", {
             loggedInUsername: loggedInUsername,
             notes: notes,

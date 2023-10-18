@@ -15,10 +15,12 @@ const noteRouter = Router();
 
 // setting up routes
 noteRouter.route("/:id").get(handleGetNote);
-noteRouter.route("/").get(handleGetAllNotes);
-noteRouter.route("/").post(handleAddNote);
-noteRouter.route("/").patch(handleUpdateNote);
-noteRouter.route("/").delete(handleDeleteNote);
+noteRouter
+    .route("/")
+    .get(handleGetAllNotes)
+    .post(handleAddNote)
+    .delete(handleDeleteNote);
+noteRouter.route("/:id").patch(handleUpdateNote);
 
 //exporting
 module.exports = noteRouter;

@@ -66,7 +66,7 @@ async function handleAddNote(req, res) {
 
 async function handleUpdateNote(req, res) {
     try {
-        if (!req.body._id) {
+        if (!req.params.id) {
             return res.status(400).json({ message: "id is empty" });
         }
         if (!req.body.title || !req.body.note) {
@@ -76,7 +76,7 @@ async function handleUpdateNote(req, res) {
         }
 
         const updatedNote = await Note.findOneAndUpdate(
-            { _id: req.body._id },
+            { _id: req.params.id },
             { title: req.body.title, note: req.body.note },
             { new: true }
         );

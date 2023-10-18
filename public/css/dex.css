@@ -2,8 +2,12 @@ body {
     background-color: black;
     color: #d5d5d5;
     margin: 0px;
-    font-family: "Young Serif", serif;
+    font-family: "Open Sans", sans-serif;
     line-height: 1;
+}
+
+button:hover {
+    font-weight: bold;
 }
 .navbar {
     position: relative;
@@ -39,6 +43,7 @@ body {
 .navbar__title__dex {
     text-align: center;
     margin: 0px;
+    font-weight: bolder;
     /* border: 0.5px solid yellow; */
 }
 .navbar__title__name {
@@ -51,7 +56,7 @@ body {
 .navbar__signup,
 .navbar__logout {
     /* border: 0.5px solid blue; */
-    font-family: "Young Serif", serif;
+    font-family: "Open Sans", sans-serif;
     text-align: center;
 
     font-size: 32px;
@@ -60,12 +65,11 @@ body {
     align-items: center;
     padding-left: 10px;
     padding-right: 10px;
+    cursor: pointer;
 }
 .navbar__signup:hover,
 .navbar__logout:hover {
-    background-color: #d5d5d5;
-    color: black;
-    cursor: pointer;
+    font-weight: bold;
 }
 
 .body {
@@ -158,6 +162,7 @@ body {
     font-weight: 700;
     margin-bottom: 3vh;
     width: 28vw;
+    line-height: 1.5;
 }
 .note__details__note {
     width: 28vw;
@@ -179,7 +184,7 @@ body {
 }
 .edit-note-btn,
 .delete-note-btn {
-    font-family: "Young Serif", serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 16px;
     color: #d5d5d5;
     background-color: rgb(20, 20, 20);
@@ -188,8 +193,8 @@ body {
     cursor: pointer;
 }
 .body__note-editor {
-    height: 65vh;
-    width: 40%;
+    height: 70vh;
+    width: 50%;
 
     border: 0.5px solid blue;
     border: 3px solid black;
@@ -215,11 +220,12 @@ body {
     resize: none;
     overflow-y: scroll;
     background-color: rgb(20, 20, 20);
-    color: white;
+    color: #d5d5d5;
     font-size: 18px;
     border: 0.5px solid rgb(0, 0, 0);
     box-shadow: 0px 0px 10px rgb(135, 135, 135);
     border-radius: 0.5vw;
+    font-family: "Open Sans", sans-serif;
 }
 .body__note-editor__note {
     /* border: 0.5px solid blue; */
@@ -234,6 +240,7 @@ body {
 .note-title {
     font-size: 24px;
     margin: 0px;
+    margin-top: 2vh;
 }
 .note-input {
     width: 100%;
@@ -241,11 +248,12 @@ body {
     resize: none;
     overflow-y: scroll;
     background-color: rgb(20, 20, 20);
-    color: white;
+    color: #d5d5d5;
     font-size: 18px;
     border: 0.5px solid rgb(0, 0, 0);
     box-shadow: 0px 0px 10px rgb(135, 135, 135);
     border-radius: 0.5vw;
+    font-family: "Open Sans", sans-serif;
 }
 .note-input::-webkit-scrollbar {
     width: 0.25vw;
@@ -258,19 +266,23 @@ body {
 
     display: flex;
     flex-direction: row;
-    justify-content: left;
+    justify-content: space-between;
     align-items: center;
+    margin-top: 1vh;
     /* padding: 0vh 1vw; */
+}
+.note-id {
+    display: none;
 }
 .cancel-btn,
 .save-btn {
-    font-family: "Young Serif", serif;
-    font-size: 24px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
     color: #d5d5d5;
     background-color: rgb(20, 20, 20);
     border-radius: 2vw;
     /* margin-bottom: 2vh; */
     cursor: pointer;
-    margin-right: 2vw;
+    /* margin-right: 2vw; */
     width: 10vw;
 }
